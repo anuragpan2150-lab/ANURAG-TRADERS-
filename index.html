@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anurag Pandey | Game Portfolio</title>
+<style>
+:root{--bg:#f4f2ff;--card:#fff;--text:#1a1633;--muted:#5d587a;--accent:#7c3aed;--accent2:#0891b2;--line:#ddd8f5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0a1a;--card:#15132b;--text:#f1eeff;--muted:#a29cc9;--accent:#a78bfa;--accent2:#22d3ee;--line:#2a2650}}
+:root[data-theme="dark"]{--bg:#0b0a1a;--card:#15132b;--text:#f1eeff;--muted:#a29cc9;--accent:#a78bfa;--accent2:#22d3ee;--line:#2a2650}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;overflow-x:hidden}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+nav b{font-size:20px;letter-spacing:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-size:14px}
+.hero{padding:50px 0 30px;position:relative}
+.hero::before{content:"";position:absolute;right:-80px;top:-20px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.35;z-index:-1}
+.tag{display:inline-block;border:1px solid var(--accent);color:var(--accent);padding:4px 14px;border-radius:99px;font-size:13px}
+h1{font-size:clamp(38px,10vw,70px);line-height:1.05;margin:16px 0}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:520px;font-size:17px}
+.btn{display:inline-block;margin:10px 10px 0 0;padding:13px 24px;border-radius:12px;text-decoration:none;font-weight:700;border:0;font-size:16px;cursor:pointer;font-family:inherit}
+.b1{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#0b0a1a;box-shadow:0 6px 24px rgba(124,58,237,.35)}
+.b2{border:1px solid var(--line);color:var(--text);background:var(--card)}
+section{padding:34px 0}
+h2{font-size:26px;margin:0 0 18px}
+h2::before{content:"> ";color:var(--accent2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.card h3{margin:0 0 6px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.thumb{height:110px;border-radius:12px;margin-bottom:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:42px}
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.skills span{background:var(--card);border:1px solid var(--line);padding:8px 16px;border-radius:99px;font-size:14px}
+.game{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;text-align:center}
+.hud{display:flex;justify-content:space-between;font-weight:700;padding:0 4px 10px;font-size:15px}
+.stage{position:relative;max-width:360px;margin:0 auto}
+canvas{width:100%;height:auto;display:block;border-radius:12px;touch-action:none;background:#0b0a1a}
+.ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(11,10,26,.82);border-radius:12px;color:#fff;padding:16px}
+.ov h3{margin:0 0 6px;font-size:24px}
+.ov p{margin:0 0 8px;color:#cfc9f5;font-size:14px}
+.hint{color:var(--muted);font-size:13px;margin:10px 0 0}
+.dif{display:flex;gap:8px;justify-content:center;margin-bottom:12px}
+.dif button{flex:1;max-width:110px;padding:9px 6px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);font-weight:600;font-size:14px;cursor:pointer;font-family:inherit}
+.dif button.on{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#0b0a1a;border-color:transparent}
+.dif button[data-d="hard"].on{background:linear-gradient(90deg,#ef4444,#f97316);color:#fff}
+.contact a.btn{margin-top:14px}
+footer{text-align:center;color:var(--muted);padding:30px 0;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>AP</b><div><a href="#play">Play</a><a href="#games">Games</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
+
+<div class="hero">
+<span class="tag">🎮 Game Portfolio</span>
+<h1>Hi, I'm <span>Anurag Pandey</span></h1>
+<p>Games meri passion hai. Neeche meri banayi game khud khel kar dekho!</p>
+<a class="btn b1" href="#play">▶ Game Khelo</a><a class="btn b2" href="#contact">Contact Karo</a>
+</div>
+
+<section id="play">
+<h2>Play: Star Catcher</h2>
+<div class="game">
+<div class="dif"><button data-d="easy">😊 Easy</button><button data-d="medium" class="on">😎 Medium</button><button data-d="hard">🔥 Hard</button></div>
+<div class="hud"><span>⭐ <span id="sc">0</span></span><span>Level <span id="lv">1</span></span><span id="li">❤️❤️❤️</span><span>Best <span id="bs">0</span></span></div>
+<div class="stage">
+<canvas id="g" width="360" height="480"></canvas>
+<div class="ov" id="ov"><h3>⭐ Star Catcher</h3><p>Stars pakdo ⭐, bombs se bacho 💣</p><p>Ungli ya mouse se basket hilao</p><button class="btn b1" id="go">Start</button></div>
+</div>
+<p class="hint">Phone: ungli se slide karo. Computer: mouse ya ← → keys.</p>
+</div>
+</section>
+
+<section id="games">
+<h2>My Games</h2>
+<div class="grid">
+<div class="card"><div class="thumb">🚀</div><h3>Space Runner</h3><p>Fast-paced arcade game with endless levels.</p></div>
+<div class="card"><div class="thumb">⚔️</div><h3>Dungeon Quest</h3><p>Adventure RPG with monsters and treasure.</p></div>
+<div class="card"><div class="thumb">🏎️</div><h3>Turbo Race</h3><p>Racing game with smooth controls.</p></div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="skills"><span>Game Design</span><span>Unity</span><span>C#</span><span>Level Design</span><span>Gameplay</span><span>Teamwork</span></div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact</h2>
+<div class="card"><p>Kaam ya collaboration ke liye mujhse baat karo.</p>
+<p style="font-size:22px;font-weight:700;color:var(--text);margin-top:10px">📞 9081200714</p>
+<a class="btn b1" href="tel:+919081200714">Call Karo</a><a class="btn b2" href="https://wa.me/919081200714">WhatsApp</a></div>
+</section>
+
+<footer>© 2026 Anurag Pandey. Game On! 🎮</footer>
+</div>
+
+<script>
+(function(){
+var c=document.getElementById('g'),x=c.getContext('2d'),W=360,H=480;
+var ov=document.getElementById('ov'),go=document.getElementById('go');
+var sc=document.getElementById('sc'),lv=document.getElementById('lv'),li=document.getElementById('li'),bs=document.getElementById('bs');
+var DF={easy:{v:.8,s:1.2,b:.15,l:5,w:1.25},medium:{v:1,s:1,b:.22,l:3,w:1},hard:{v:1.5,s:.65,b:.35,l:2,w:.8}};
+var dk='medium',D=DF[dk],px=W/2,items=[],score=0,lives=3,level=1,run=false,last=0,spawn=0,best=0,keys={};
+function lb(){best=0;try{best=+localStorage.getItem('apbest_'+dk)||0}catch(e){}bs.textContent=best}
+lb();
+document.querySelectorAll('.dif button').forEach(function(b){b.onclick=function(){
+document.querySelectorAll('.dif button').forEach(function(z){z.classList.remove('on')});
+b.classList.add('on');dk=b.getAttribute('data-d');D=DF[dk];lb();if(run)start();else{lives=D.l;hud()}}});
+function hud(){sc.textContent=score;lv.textContent=level;bs.textContent=best;li.textContent='❤️'.repeat(Math.max(lives,0))||'💔'}
+function start(){score=0;lives=D.l;level=1;items=[];spawn=0;px=W/2;run=true;ov.style.display='none';hud();last=performance.now();requestAnimationFrame(loop)}
+function over(){run=false;if(score>best){best=score;try{localStorage.setItem('apbest_'+dk,best)}catch(e){}}hud();
+ov.innerHTML='<h3>Game Over 💥</h3><p>Score: '+score+' | Level: '+level+'</p><button class="btn b1" id="go">Phir Khelo</button>';
+ov.style.display='flex';document.getElementById('go').onclick=start}
+function move(e){var r=c.getBoundingClientRect();px=Math.max(34,Math.min(W-34,(e.clientX-r.left)*W/r.width))}
+c.addEventListener('pointermove',move);c.addEventListener('pointerdown',move);
+window.addEventListener('keydown',function(e){keys[e.key]=1;if(run&&e.key.indexOf('Arrow')==0)e.preventDefault()});
+window.addEventListener('keyup',function(e){keys[e.key]=0});
+function loop(t){
+if(!run)return;
+var dt=Math.min((t-last)/1000,.05);last=t;
+if(keys.ArrowLeft)px-=380*dt;if(keys.ArrowRight)px+=380*dt;px=Math.max(34,Math.min(W-34,px));
+spawn-=dt;
+if(spawn<=0){spawn=Math.max(.22,(.95-level*.07)*D.s);items.push({x:20+Math.random()*(W-40),y:-20,bomb:Math.random()<D.b,v:(110+level*22+Math.random()*40)*D.v})}
+for(var i=items.length-1;i>=0;i--){var o=items[i];o.y+=o.v*dt;
+if(o.y>H-52&&o.y<H-20&&Math.abs(o.x-px)<42*D.w){items.splice(i,1);
+if(o.bomb){lives--}else{score++;level=1+Math.floor(score/10)}hud();if(lives<=0){over();return}}
+else if(o.y>H+20)items.splice(i,1)}
+x.clearRect(0,0,W,H);
+var g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#1b1445');g.addColorStop(1,'#0b0a1a');x.fillStyle=g;x.fillRect(0,0,W,H);
+x.textAlign='center';x.font='28px serif';
+items.forEach(function(o){x.fillText(o.bomb?'💣':'⭐',o.x,o.y)});
+x.font='44px serif';x.fillText('🧺',px,H-14);
+requestAnimationFrame(loop)}
+go.onclick=start;
+})();
+</script>
+</body>
+</html>
